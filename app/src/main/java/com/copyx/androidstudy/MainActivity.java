@@ -21,8 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
-        Button challenge01Button = this.findViewById(R.id.challenge_01_button);
-        challenge01Button.setOnClickListener(new View.OnClickListener() {
+        this.findViewById(R.id.challenge_01_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), TwoButtonsOnBottomActivity.class);
@@ -30,8 +29,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button challenge02Button = this.findViewById(R.id.challenge_02_button);
-        challenge02Button.setOnClickListener(new View.OnClickListener() {
+        this.findViewById(R.id.challenge_02_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), TopMiddleBottomButtonsActivity.class);
@@ -40,11 +38,19 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        Button challenge03Button = this.findViewById(R.id.challenge_03_button);
-        challenge03Button.setOnClickListener(new View.OnClickListener() {
+        this.findViewById(R.id.challenge_03_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), LinearLayoutActivity.class);
+                startActivity(intent);
+            }
+
+        });
+
+        this.findViewById(R.id.challenge_04_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), RelativeLayoutActivity.class);
                 startActivity(intent);
             }
 

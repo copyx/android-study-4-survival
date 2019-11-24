@@ -18,6 +18,7 @@
         <activity android:name=".TwoButtonsOnBottomActivity" />
         <activity android:name=".TopMiddleBottomButtonsActivity" />
         <activity android:name=".LinearLayoutActivity" />
+        <activity android:name=".RelativeLayoutActivity" />
     </application>
 
 </manifest>
