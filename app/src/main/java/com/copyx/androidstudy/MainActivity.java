@@ -39,5 +39,15 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
+        Button challenge03Button = this.findViewById(R.id.challenge_03_button);
+        challenge03Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), LinearLayoutActivity.class);
+                startActivity(intent);
+            }
+
+        });
     }
 }

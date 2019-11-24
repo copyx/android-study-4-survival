@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">android.study</string>
+    <string name="button_text_01">Button 1</string>
+    <string name="button_text_02">Button 2</string>
+    <string name="button_text_03">Button 3</string>
+    <string name="button_text_04">Button 4</string>
+    <string name="button_text_05">Button 5</string>
+    <string name="button_text_06">Button 6</string>
+    <string name="button_text_09">Button 9</string>
+    <string name="button_text_10">Button 10</string>
+    <string name="button_text_11">Button 11</string>
+    <string name="button_text_12">Button 12</string>
 </resources>

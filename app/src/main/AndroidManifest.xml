@@ -12,12 +12,12 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TwoButtonsOnBottomActivity"></activity>
-        <activity android:name=".TopMiddleBottomButtonsActivity"></activity>
+        <activity android:name=".TwoButtonsOnBottomActivity" />
+        <activity android:name=".TopMiddleBottomButtonsActivity" />
+        <activity android:name=".LinearLayoutActivity" />
     </application>
 
 </manifest>
