@@ -55,5 +55,14 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
+        this.findViewById(R.id.challenge_05_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), TableLayoutActivity.class);
+                startActivity(intent);
+            }
+
+        });
     }
 }

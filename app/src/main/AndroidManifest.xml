@@ -19,6 +19,7 @@
         <activity android:name=".TopMiddleBottomButtonsActivity" />
         <activity android:name=".LinearLayoutActivity" />
         <activity android:name=".RelativeLayoutActivity" />
+        <activity android:name=".TableLayoutActivity" />
     </application>
 
 </manifest>
