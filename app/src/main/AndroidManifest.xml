@@ -22,6 +22,7 @@
         <activity android:name=".TableLayoutActivity" />
         <activity android:name=".SwitchBetweenTwoImageViewActivity" />
         <activity android:name=".CountLettersInSMSInputScreen" />
+        <activity android:name=".FrameLayoutActivity"/>
     </application>
 
 </manifest>

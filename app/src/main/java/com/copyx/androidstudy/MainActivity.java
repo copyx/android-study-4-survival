@@ -63,6 +63,15 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+        this.findViewById(R.id.frame_layout_practice_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), FrameLayoutActivity.class);
+                startActivity(intent);
+            }
+
+        });
+
         this.findViewById(R.id.challenge_03_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
