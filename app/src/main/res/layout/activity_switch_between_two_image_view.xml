@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <ScrollView
+        android:id="@+id/top_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/switch_button">
+
+        <HorizontalScrollView
+            android:id="@+id/top_horizontal_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/burger" />
+
+        </HorizontalScrollView>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/switch_button"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="위치 바꾸기"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_scroll_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_scroll_view" />
+
+    <ScrollView
+        android:id="@+id/bottom_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/switch_button"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <HorizontalScrollView
+            android:id="@+id/bottom_horizontal_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </HorizontalScrollView>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

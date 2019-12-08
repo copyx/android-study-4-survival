@@ -5,9 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.View;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        this.findViewById(R.id.challenge_03_button).setOnClickListener(new View.OnClickListener() {
+        this.findViewById(R.id.linear_layout_practice_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), LinearLayoutActivity.class);
@@ -47,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        this.findViewById(R.id.challenge_04_button).setOnClickListener(new View.OnClickListener() {
+        this.findViewById(R.id.relative_layout_practice_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), RelativeLayoutActivity.class);
@@ -56,10 +54,27 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        this.findViewById(R.id.challenge_05_button).setOnClickListener(new View.OnClickListener() {
+        this.findViewById(R.id.table_layout_practice_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), TableLayoutActivity.class);
+                startActivity(intent);
+            }
+
+        });
+
+        this.findViewById(R.id.challenge_03_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), SwitchBetweenTwoImageViewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        this.findViewById(R.id.challenge_04_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), CountLettersInSMSInputScreen.class);
                 startActivity(intent);
             }
 
