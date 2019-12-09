@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class CountLettersInSMSInputScreen extends AppCompatActivity {
 
+    EditText phoneNumberEditText;
     EditText messageEditText;
     TextView messageLengthIndicatorTextView;
     Button sendButton;
@@ -24,6 +25,7 @@ public class CountLettersInSMSInputScreen extends AppCompatActivity {
 
         setContentView(R.layout.activity_count_letters_in_sms_input_screen);
 
+        phoneNumberEditText = findViewById(R.id.phone_number_edit_text);
         messageEditText = findViewById(R.id.message_edit_text);
         messageLengthIndicatorTextView = findViewById(R.id.message_length_indicator_text_view);
         sendButton = findViewById(R.id.send_button);
@@ -33,6 +35,18 @@ public class CountLettersInSMSInputScreen extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
+        phoneNumberEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) { }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                messageEditText.setEnabled(s.length() > 0);
+            }
+        });
         messageEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
