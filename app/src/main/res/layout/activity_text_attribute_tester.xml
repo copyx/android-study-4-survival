@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:cursorVisible="true"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/output_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/input_edit_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/text_style_radio_group"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/output_text_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Characters" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Words" />
+
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sentences" />
+
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/bold_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="굵게"
+            app:layout_constraintTop_toBottomOf="@+id/text_style_radio_group"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <CheckBox
+            android:id="@+id/italic_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="기울임"
+            app:layout_constraintTop_toTopOf="@+id/bold_check_box"
+            app:layout_constraintBottom_toBottomOf="@id/bold_check_box"
+            app:layout_constraintStart_toEndOf="@id/bold_check_box" />
+
+        <CheckBox
+            android:id="@+id/auto_link_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="자동 링크"
+            app:layout_constraintTop_toTopOf="@id/bold_check_box"
+            app:layout_constraintBottom_toBottomOf="@id/bold_check_box"
+            app:layout_constraintStart_toEndOf="@id/italic_check_box" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

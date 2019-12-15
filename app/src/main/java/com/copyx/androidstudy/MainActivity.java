@@ -88,5 +88,14 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
+        this.findViewById(R.id.text_attribute_tester_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), TextAttributeTesterActivity.class);
+                startActivity(intent);
+            }
+
+        });
     }
 }
