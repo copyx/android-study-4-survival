@@ -97,5 +97,14 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
+        this.findViewById(R.id.inflation_practice_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), InflationActivity.class);
+                startActivity(intent);
+            }
+
+        });
     }
 }

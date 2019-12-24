@@ -12,6 +12,16 @@
         tools:context=".MainActivity">
 
         <Button
+            android:id="@+id/inflation_practice_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="인플레이션 실습"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/text_attribute_tester_button" />
+
+        <Button
             android:id="@+id/text_attribute_tester_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

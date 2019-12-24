@@ -24,6 +24,7 @@
         <activity android:name=".CountLettersInSMSInputScreen" />
         <activity android:name=".FrameLayoutActivity"/>
         <activity android:name=".TextAttributeTesterActivity"/>
+        <activity android:name=".InflationActivity"/>
     </application>
 
 </manifest>
