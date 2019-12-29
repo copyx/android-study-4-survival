@@ -3,15 +3,17 @@ package com.copyx.androidstudy;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    static final String TAG = "MainActivity";
 
     private LinearLayout buttonLinearLayout;
 
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
+        addButton("액티비티 종료 응답 실습", SetResultActivity.class, 1000);
         addButton("인플레이션 실습", InflationActivity.class);
         addButton("텍스트 속성 테스터", TextAttributeTesterActivity.class);
         addButton("도전 04. SMS 입력 화면 만들고 글자 수 표시하기", CountLettersInSMSInputScreen.class);
@@ -39,26 +42,45 @@ public class MainActivity extends AppCompatActivity {
         addButton("도전 01. 새 프로젝트 아래쪽에 두 개의 버튼 추가하기", TwoButtonsOnBottomActivity.class);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        String toastMessage = String.format("RQST:%d/RST:%d - Data: %s", requestCode, resultCode, data.getStringExtra("data"));
+        Log.d(TAG, toastMessage);
+
+        Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show();
+    }
+
     private void addButton(String buttonText, Class<?> cls) {
-        // 버튼 만들고
         Button button = new Button(this);
 
         button.setText(buttonText);
-        button.setOnClickListener(new OnClickListener(cls));
+        button.setOnClickListener(new OnClickListenerToStartActivity(cls));
 
-        // 레이아웃 관련 속성 채우고
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         button.setLayoutParams(layoutParams);
 
-        // 레이아웃에 넣고
         buttonLinearLayout.addView(button);
     }
 
-    private class OnClickListener implements View.OnClickListener {
+    private void addButton(String buttonText, Class<?> cls, int requestCode) {
+        Button button = new Button(this);
+
+        button.setText(buttonText);
+        button.setOnClickListener(new OnClickListenerToStartActivityForResult(cls, requestCode));
+
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        button.setLayoutParams(layoutParams);
+
+        buttonLinearLayout.addView(button);
+    }
+
+    private class OnClickListenerToStartActivity implements View.OnClickListener {
 
         Class<?> cls;
 
-        OnClickListener(Class<?> cls) {
+        OnClickListenerToStartActivity(Class<?> cls) {
             this.cls = cls;
         }
 
@@ -66,6 +88,23 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             Intent intent = new Intent(v.getContext(), cls);
             startActivity(intent);
+        }
+    }
+
+    private class OnClickListenerToStartActivityForResult implements View.OnClickListener {
+
+        Class<?> cls;
+        int requestCode;
+
+        OnClickListenerToStartActivityForResult(Class<?> cls, int requestCode) {
+            this.cls = cls;
+            this.requestCode = requestCode;
+        }
+
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(v.getContext(), cls);
+            startActivityForResult(intent, requestCode);
         }
     }
 }

@@ -22,9 +22,12 @@
         <activity android:name=".TableLayoutActivity" />
         <activity android:name=".SwitchBetweenTwoImageViewActivity" />
         <activity android:name=".CountLettersInSMSInputScreen" />
-        <activity android:name=".FrameLayoutActivity"/>
-        <activity android:name=".TextAttributeTesterActivity"/>
-        <activity android:name=".InflationActivity"/>
+        <activity android:name=".FrameLayoutActivity" />
+        <activity android:name=".TextAttributeTesterActivity" />
+        <activity android:name=".InflationActivity" />
+        <activity
+            android:name=".SetResultActivity"
+            android:label="액티비티 종료 응답 연습" />
     </application>
 
 </manifest>
