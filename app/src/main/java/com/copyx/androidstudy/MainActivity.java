@@ -3,108 +3,69 @@ package com.copyx.androidstudy;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
+
+    private LinearLayout buttonLinearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        buttonLinearLayout = findViewById(R.id.button_linear_layout);
     }
 
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
-        this.findViewById(R.id.challenge_01_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), TwoButtonsOnBottomActivity.class);
-                startActivity(intent);
-            }
-        });
+        addButton("인플레이션 실습", InflationActivity.class);
+        addButton("텍스트 속성 테스터", TextAttributeTesterActivity.class);
+        addButton("도전 04. SMS 입력 화면 만들고 글자 수 표시하기", CountLettersInSMSInputScreen.class);
+        addButton("도전 03. 두 개의 이미지뷰에 이미지 번갈아 보여주기", SwitchBetweenTwoImageViewActivity.class);
+        addButton("FrameLayout 실습", FrameLayoutActivity.class);
+        addButton("TableLayout 실습", TableLayoutActivity.class);
+        addButton("RelativeLayout 실습", RelativeLayoutActivity.class);
+        addButton("LinearLayout 실습", LinearLayoutActivity.class);
+        addButton("도전 02. 위, 아래, 중앙의 공간을 차지하는 전형적인 화면 구성하기", TopMiddleBottomButtonsActivity.class);
+        addButton("도전 01. 새 프로젝트 아래쪽에 두 개의 버튼 추가하기", TwoButtonsOnBottomActivity.class);
+    }
 
-        this.findViewById(R.id.challenge_02_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), TopMiddleBottomButtonsActivity.class);
-                startActivity(intent);
-            }
+    private void addButton(String buttonText, Class<?> cls) {
+        // 버튼 만들고
+        Button button = new Button(this);
 
-        });
+        button.setText(buttonText);
+        button.setOnClickListener(new OnClickListener(cls));
 
-        this.findViewById(R.id.linear_layout_practice_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), LinearLayoutActivity.class);
-                startActivity(intent);
-            }
+        // 레이아웃 관련 속성 채우고
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        button.setLayoutParams(layoutParams);
 
-        });
+        // 레이아웃에 넣고
+        buttonLinearLayout.addView(button);
+    }
 
-        this.findViewById(R.id.relative_layout_practice_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), RelativeLayoutActivity.class);
-                startActivity(intent);
-            }
+    private class OnClickListener implements View.OnClickListener {
 
-        });
+        Class<?> cls;
 
-        this.findViewById(R.id.table_layout_practice_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), TableLayoutActivity.class);
-                startActivity(intent);
-            }
+        OnClickListener(Class<?> cls) {
+            this.cls = cls;
+        }
 
-        });
-
-        this.findViewById(R.id.frame_layout_practice_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), FrameLayoutActivity.class);
-                startActivity(intent);
-            }
-
-        });
-
-        this.findViewById(R.id.challenge_03_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), SwitchBetweenTwoImageViewActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        this.findViewById(R.id.challenge_04_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), CountLettersInSMSInputScreen.class);
-                startActivity(intent);
-            }
-
-        });
-
-        this.findViewById(R.id.text_attribute_tester_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), TextAttributeTesterActivity.class);
-                startActivity(intent);
-            }
-
-        });
-
-        this.findViewById(R.id.inflation_practice_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), InflationActivity.class);
-                startActivity(intent);
-            }
-
-        });
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(v.getContext(), cls);
+            startActivity(intent);
+        }
     }
 }
