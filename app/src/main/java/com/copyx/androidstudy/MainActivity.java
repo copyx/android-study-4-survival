@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        String toastMessage = String.format("RQST:%d/RST:%d - Data: %s", requestCode, resultCode, data.getStringExtra("data"));
+        String toastMessage = String.format("RequestCode:%d/ResultCode:%d - Data: %s", requestCode, resultCode, data.getStringExtra("data"));
         Log.d(TAG, toastMessage);
 
         Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show();
