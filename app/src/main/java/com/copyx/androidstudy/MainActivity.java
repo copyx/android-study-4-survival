@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
+        addButton("서비스 실습", ServicePracticeActivity.class);
         addButton("액티비티 수명주기", ActivityLifeCycleActivity.class);
         addButton("인텐트 실습", IntentPracticeActivity.class);
         addButton("액티비티 종료 응답 실습", SetResultActivity.class, 1000);
@@ -108,5 +109,18 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(v.getContext(), cls);
             startActivityForResult(intent, requestCode);
         }
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        if (intent == null) {
+            return;
+        }
+
+        String command = intent.getStringExtra("command");
+        String data = intent.getStringExtra("data");
+
+        Toast.makeText(this, "Command : " + command + ", data : " + data, Toast.LENGTH_LONG).show();
+        super.onNewIntent(intent);
     }
 }
