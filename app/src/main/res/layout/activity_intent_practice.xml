@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/phone_number_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="tel:010-0000-0000"
+        android:textSize="24dp" />
+
+    <Button
+        android:id="@+id/call_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Make a call" />
+
+    <EditText
+        android:id="@+id/website_url_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="http://google.com"
+        android:textSize="24dp" />
+
+    <Button
+        android:id="@+id/go_website_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go website" />
+
+    <Button
+        android:id="@+id/specific_component_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open specific component\n(Inflation Activity)" />
+
+    <EditText
+        android:id="@+id/pdf_filename_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="anything.pdf"
+        android:textSize="24dp" />
+
+    <Button
+        android:id="@+id/open_pdf_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open PDF" />
+
+    <Button
+        android:id="@+id/pass_parcelable_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pass Parcelable" />
+
+</LinearLayout>

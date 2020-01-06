@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
+        addButton("인텐트 실습", IntentPracticeActivity.class);
         addButton("액티비티 종료 응답 실습", SetResultActivity.class, 1000);
         addButton("인플레이션 실습", InflationActivity.class);
         addButton("텍스트 속성 테스터", TextAttributeTesterActivity.class);
