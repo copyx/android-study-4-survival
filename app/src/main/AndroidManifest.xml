@@ -3,6 +3,7 @@
     package="com.copyx.androidstudy">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
     <application
         android:allowBackup="true"
@@ -40,6 +41,15 @@
         <activity android:name=".PassingParcelableActivity" />
         <activity android:name=".ActivityLifeCycleActivity" />
         <activity android:name=".ServicePracticeActivity" />
+
+        <receiver
+            android:name=".SMSReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
