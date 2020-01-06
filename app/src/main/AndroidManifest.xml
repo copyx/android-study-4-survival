@@ -32,6 +32,7 @@
             android:label="액티비티 종료 응답 연습" />
         <activity android:name=".IntentPracticeActivity" />
         <activity android:name=".PassingParcelableActivity" />
+        <activity android:name=".ActivityLifeCycleActivity" />
     </application>
 
 </manifest>
