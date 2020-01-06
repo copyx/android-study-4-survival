@@ -12,6 +12,12 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.copyx.androidstudy.challenge.Challenge05LoginActivity;
+import com.copyx.androidstudy.challenge.CountLettersInSMSInputScreen;
+import com.copyx.androidstudy.challenge.SwitchBetweenTwoImageViewActivity;
+import com.copyx.androidstudy.challenge.TopMiddleBottomButtonsActivity;
+import com.copyx.androidstudy.challenge.TwoButtonsOnBottomActivity;
+
 public class MainActivity extends AppCompatActivity {
     static final String TAG = "MainActivity";
 
@@ -29,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
+        addButton("도전 05. 로그인 화면과 메뉴 화면 전환하기", Challenge05LoginActivity.class);
         addButton("서비스 실습", ServicePracticeActivity.class);
         addButton("액티비티 수명주기", ActivityLifeCycleActivity.class);
         addButton("인텐트 실습", IntentPracticeActivity.class);

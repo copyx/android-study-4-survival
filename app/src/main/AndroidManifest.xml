@@ -24,13 +24,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TwoButtonsOnBottomActivity" />
-        <activity android:name=".TopMiddleBottomButtonsActivity" />
+        <activity android:name=".challenge.TwoButtonsOnBottomActivity" />
+        <activity android:name=".challenge.TopMiddleBottomButtonsActivity" />
         <activity android:name=".LinearLayoutActivity" />
         <activity android:name=".RelativeLayoutActivity" />
         <activity android:name=".TableLayoutActivity" />
-        <activity android:name=".SwitchBetweenTwoImageViewActivity" />
-        <activity android:name=".CountLettersInSMSInputScreen" />
+        <activity android:name=".challenge.SwitchBetweenTwoImageViewActivity" />
+        <activity android:name=".challenge.CountLettersInSMSInputScreen" />
         <activity android:name=".FrameLayoutActivity" />
         <activity android:name=".TextAttributeTesterActivity" />
         <activity android:name=".InflationActivity" />
@@ -50,6 +50,9 @@
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".challenge.Challenge05LoginActivity" />
+        <activity android:name=".challenge.Challenge05MainMenuActivity" />
     </application>
 
 </manifest>

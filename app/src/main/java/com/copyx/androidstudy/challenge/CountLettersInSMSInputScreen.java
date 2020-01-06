@@ -1,4 +1,4 @@
-package com.copyx.androidstudy;
+package com.copyx.androidstudy.challenge;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.copyx.androidstudy.R;
 
 public class CountLettersInSMSInputScreen extends AppCompatActivity {
 
