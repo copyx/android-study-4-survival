@@ -8,10 +8,13 @@ import android.os.Bundle;
 import android.telephony.SmsMessage;
 import android.util.Log;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class SMSReceiver extends BroadcastReceiver {
     private static final String TAG = "SMSReceiver";
+
+    public SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -29,6 +32,8 @@ public class SMSReceiver extends BroadcastReceiver {
 
             Date receivedDate = new Date(messages[0].getTimestampMillis());
             Log.d(TAG, "SMS received date : " + receivedDate.toString());
+
+            sendToActivity(context, sender, contents, receivedDate);
         }
     }
 
@@ -47,5 +52,15 @@ public class SMSReceiver extends BroadcastReceiver {
         }
 
         return messages;
+    }
+
+    private void sendToActivity(Context context, String sender, String contents, Date receivedDate) {
+        Intent intent = new Intent(context, SMSActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("sender", sender);
+        intent.putExtra("contents", contents);
+        intent.putExtra("receivedDate", format.format(receivedDate));
+
+        context.startActivity(intent);
     }
 }

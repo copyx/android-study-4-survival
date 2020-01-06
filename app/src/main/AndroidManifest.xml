@@ -51,6 +51,8 @@
             </intent-filter>
         </receiver>
 
+        <activity android:name=".SMSActivity" />
+
         <activity android:name=".challenge.Challenge05LoginActivity" />
         <activity android:name=".challenge.Challenge05MainMenuActivity" />
     </application>
