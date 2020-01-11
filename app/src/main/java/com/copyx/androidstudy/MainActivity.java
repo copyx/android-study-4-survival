@@ -7,7 +7,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -70,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
+        addButton("터치/제스쳐/키 이벤트 처리 실습", TouchGestureKeyEventActivity.class);
+
         addButton("도전 05. 로그인 화면과 메뉴 화면 전환하기", Challenge05LoginActivity.class);
         addButton("서비스 실습", ServicePracticeActivity.class);
         addButton("액티비티 수명주기", ActivityLifeCycleActivity.class);
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         addButton("액티비티 종료 응답 실습", SetResultActivity.class, 1000);
         addButton("인플레이션 실습", InflationActivity.class);
         addButton("텍스트 속성 테스터", TextAttributeTesterActivity.class);
+
         addButton("도전 04. SMS 입력 화면 만들고 글자 수 표시하기", CountLettersInSMSInputScreen.class);
         addButton("도전 03. 두 개의 이미지뷰에 이미지 번갈아 보여주기", SwitchBetweenTwoImageViewActivity.class);
         addButton("FrameLayout 실습", FrameLayoutActivity.class);

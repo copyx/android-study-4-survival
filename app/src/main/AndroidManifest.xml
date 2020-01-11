@@ -55,6 +55,7 @@
 
         <activity android:name=".challenge.Challenge05LoginActivity" />
         <activity android:name=".challenge.Challenge05MainMenuActivity" />
+        <activity android:name=".TouchGestureKeyEventActivity" />
     </application>
 
 </manifest>
