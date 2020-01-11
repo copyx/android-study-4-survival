@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
+        addButton("포커스 이벤트 처리 실습", FocusEventActivity.class);
         addButton("터치/제스쳐/키 이벤트 처리 실습", TouchGestureKeyEventActivity.class);
 
         addButton("도전 05. 로그인 화면과 메뉴 화면 전환하기", Challenge05LoginActivity.class);
