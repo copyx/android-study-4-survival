@@ -57,6 +57,8 @@
         <activity android:name=".challenge.Challenge05MainMenuActivity" />
         <activity android:name=".TouchGestureKeyEventActivity" />
         <activity android:name=".FocusEventActivity" />
+        <activity android:name=".OrientationActivity"
+            android:configChanges="orientation|screenSize"/>
     </application>
 
 </manifest>
