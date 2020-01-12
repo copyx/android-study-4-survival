@@ -61,6 +61,7 @@
             android:configChanges="orientation|screenSize"/>
         <activity android:name=".ToastPracticeActivity" />
         <activity android:name=".DialogPracticeActivity" />
+        <activity android:name=".ProgressBarPracticeActivity" />
     </application>
 
 </manifest>

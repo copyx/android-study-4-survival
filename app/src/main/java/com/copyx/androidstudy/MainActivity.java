@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.copyx.androidstudy.challenge.Challenge05LoginActivity;
@@ -69,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
+        addButton("프로그레스바 실습", ProgressBarPracticeActivity.class);
         addButton("알림 대화상자 실습", DialogPracticeActivity.class);
         addButton("토스트 & 스낵바 실습", ToastPracticeActivity.class);
         addButton("화면 방향전환 이벤트 처리 실습", OrientationActivity.class);
