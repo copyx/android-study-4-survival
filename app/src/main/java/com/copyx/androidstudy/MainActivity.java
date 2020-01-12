@@ -99,10 +99,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        String toastMessage = String.format("RequestCode:%d/ResultCode:%d - Data: %s", requestCode, resultCode, data.getStringExtra("data"));
-        Log.d(TAG, toastMessage);
+        String dataString = data != null ? data.getStringExtra("data") : "";
+        String message = String.format("RequestCode:%d/ResultCode:%d - Data: %s", requestCode, resultCode, dataString);
+        Log.d(TAG, message);
 
-        Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     private void addButton(String buttonText, Class<?> cls) {
