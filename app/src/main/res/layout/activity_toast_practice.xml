@@ -43,4 +43,11 @@
         android:text="Show Another Style"
         android:textSize="20dp" />
 
+    <Button
+        android:id="@+id/toast_snack_bar_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Snack Bar"
+        android:textSize="20dp" />
+
 </LinearLayout>

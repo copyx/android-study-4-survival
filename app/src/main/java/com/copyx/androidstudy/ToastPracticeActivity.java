@@ -12,6 +12,8 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class ToastPracticeActivity extends AppCompatActivity {
     EditText xEditText;
     EditText yEditText;
@@ -58,6 +60,13 @@ public class ToastPracticeActivity extends AppCompatActivity {
 
                 toast.setView(layout);
                 toast.show();
+            }
+        });
+
+        findViewById(R.id.toast_snack_bar_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar.make(v, "스낵바입니다.", Snackbar.LENGTH_LONG).show();
             }
         });
     }
