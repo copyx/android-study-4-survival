@@ -59,6 +59,7 @@
         <activity android:name=".FocusEventActivity" />
         <activity android:name=".OrientationActivity"
             android:configChanges="orientation|screenSize"/>
+        <activity android:name=".ToastPracticeActivity" />
     </application>
 
 </manifest>
