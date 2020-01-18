@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 위치 이동 -->
+    <translate
+        android:duration="6000"
+        android:fromXDelta="100%p"
+        android:repeatCount="3"
+        android:toXDelta="0%p" />
+    <!-- 투명도 변경 -->
+    <alpha
+        android:duration="6000"
+        android:fromAlpha="0"
+        android:repeatCount="3"
+        android:toAlpha="1" />
+</set>
