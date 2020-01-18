@@ -63,6 +63,7 @@
         <activity android:name=".DialogPracticeActivity" />
         <activity android:name=".ProgressBarPracticeActivity" />
         <activity android:name=".AnimationPracticeActivity" />
+        <activity android:name=".PageSlidingActivity" />
     </application>
 
 </manifest>
