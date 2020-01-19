@@ -64,6 +64,7 @@
         <activity android:name=".ProgressBarPracticeActivity" />
         <activity android:name=".AnimationPracticeActivity" />
         <activity android:name=".PageSlidingActivity" />
+        <activity android:name=".FragmentPracticeActivity" />
     </application>
 
 </manifest>

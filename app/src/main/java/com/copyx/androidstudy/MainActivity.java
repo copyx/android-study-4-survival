@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
+        addButton("프래그먼트 실습", FragmentPracticeActivity.class);
         addButton("페이지 슬라이딩 실습", PageSlidingActivity.class);
         addButton("애니메이션 실습", AnimationPracticeActivity.class);
 
