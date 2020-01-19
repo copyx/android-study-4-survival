@@ -65,6 +65,7 @@
         <activity android:name=".AnimationPracticeActivity" />
         <activity android:name=".PageSlidingActivity" />
         <activity android:name=".FragmentPracticeActivity" />
+        <activity android:name=".TwoFragmentInOneActivity" />
     </application>
 
 </manifest>
