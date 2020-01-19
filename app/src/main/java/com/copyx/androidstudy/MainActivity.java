@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,6 +26,8 @@ import com.copyx.androidstudy.challenge.CountLettersInSMSInputScreen;
 import com.copyx.androidstudy.challenge.SwitchBetweenTwoImageViewActivity;
 import com.copyx.androidstudy.challenge.TopMiddleBottomButtonsActivity;
 import com.copyx.androidstudy.challenge.TwoButtonsOnBottomActivity;
+
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     static final String TAG = "MainActivity";
@@ -64,6 +67,10 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(this, "SMS 권한 거부됨", Toast.LENGTH_LONG).show();
                 }
+                break;
+            }
+            default: {
+                Log.d(TAG, "Unknown request code. : " + requestCode);
             }
         }
     }
@@ -72,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
+        View view = addButton("컨텍스트 메뉴 실습(길게 누르세요)", null);
+        registerForContextMenu(view);
         addButton("한 액티비티에 두 개의 프래그먼트 실습", TwoFragmentInOneActivity.class);
         addButton("프래그먼트 실습", FragmentPracticeActivity.class);
         addButton("페이지 슬라이딩 실습", PageSlidingActivity.class);
@@ -107,13 +116,13 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         String dataString = data != null ? data.getStringExtra("data") : "";
-        String message = String.format("RequestCode:%d/ResultCode:%d - Data: %s", requestCode, resultCode, dataString);
+        String message = String.format(Locale.KOREA, "RequestCode:%d/ResultCode:%d - Data: %s", requestCode, resultCode, dataString);
         Log.d(TAG, message);
 
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
-    private void addButton(String buttonText, Class<?> cls) {
+    private View addButton(String buttonText, Class<?> cls) {
         Button button = new Button(this);
 
         button.setText(buttonText);
@@ -123,9 +132,11 @@ public class MainActivity extends AppCompatActivity {
         button.setLayoutParams(layoutParams);
 
         buttonLinearLayout.addView(button);
+
+        return button;
     }
 
-    private void addButton(String buttonText, Class<?> cls, int requestCode) {
+    private View addButton(String buttonText, Class<?> cls, int requestCode) {
         Button button = new Button(this);
 
         button.setText(buttonText);
@@ -135,6 +146,8 @@ public class MainActivity extends AppCompatActivity {
         button.setLayoutParams(layoutParams);
 
         buttonLinearLayout.addView(button);
+
+        return button;
     }
 
     private class OnClickListenerToStartActivity implements View.OnClickListener {
@@ -164,6 +177,10 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
+            if (cls == null) {
+                return;
+            }
+
             Intent intent = new Intent(v.getContext(), cls);
             startActivityForResult(intent, requestCode);
         }
@@ -209,5 +226,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        onOptionsItemSelected(item);
+        return super.onContextItemSelected(item);
     }
 }
