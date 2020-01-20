@@ -41,7 +41,7 @@ public class TabPracticeActivity extends AppCompatActivity {
         tabs.addTab(tabs.newTab().setText("Spam"));
         tabs.addTab(tabs.newTab().setText("Numbers"));
 
-        tabs.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 int position = tab.getPosition();
