@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -68,6 +69,7 @@
         <activity android:name=".TwoFragmentInOneActivity" />
         <activity android:name=".TabPracticeActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".WebViewPracticeActivity" />
     </application>
 
 </manifest>

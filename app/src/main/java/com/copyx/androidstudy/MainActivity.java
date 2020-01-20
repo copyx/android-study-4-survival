@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
+        addButton("웹뷰 실습", WebViewPracticeActivity.class);
         addButton("탭 구현 실습", TabPracticeActivity.class);
         View view = addButton("컨텍스트 메뉴 실습(길게 누르세요)", null);
         registerForContextMenu(view);
