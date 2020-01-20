@@ -70,6 +70,7 @@
         <activity android:name=".TabPracticeActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".WebViewPracticeActivity" />
+        <activity android:name=".KeypadPracticeActivity" />
     </application>
 
 </manifest>
