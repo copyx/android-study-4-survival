@@ -1,25 +1,27 @@
 package com.copyx.androidstudy;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.copyx.androidstudy.challenge.Challenge05LoginActivity;
 import com.copyx.androidstudy.challenge.CountLettersInSMSInputScreen;
@@ -202,6 +204,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        View view = menu.findItem(R.id.menu_search).getActionView();
+
+        if (view != null) {
+            EditText editText = view.findViewById(R.id.edit_text);
+
+            if (editText != null) {
+                editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+                    @Override
+                    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                        Toast.makeText(v.getContext(), "Search : " + v.getText(), Toast.LENGTH_SHORT).show();
+                        return false;
+                    }
+                });
+            }
+        }
+
         return true;
     }
 

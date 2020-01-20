@@ -10,9 +10,11 @@
 
     <item
         android:id="@+id/menu_search"
+        android:actionLayout="@layout/search_layout"
+        android:orderInCategory="102"
         android:icon="@android:drawable/ic_menu_search"
         android:title="Search"
-        app:showAsAction="always" />
+        app:showAsAction="always|withText" />
 
     <item
         android:id="@+id/menu_settings"
