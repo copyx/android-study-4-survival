@@ -76,6 +76,7 @@
         <activity android:name=".BitmapButtonActivity" />
         <activity android:name=".ListViewPracticeActivity" />
         <activity android:name=".SpinnerPracticeActivity" />
+        <activity android:name=".GridViewPracticeActivity" />
     </application>
 
 </manifest>
