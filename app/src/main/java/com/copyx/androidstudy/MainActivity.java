@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
+        addButton("멀티터치 이미지 뷰어 만들기", MultiTouchImageViewActivity.class);
         addButton("그리드뷰를 이용한 월별 캘린더 만들기", MonthlyCalendarActivity.class);
         addButton("복합 위젯(DateTimePicker) 실습", CompositeWidgetPracticeActivity.class);
         addButton("그리드뷰 실습", GridViewPracticeActivity.class);

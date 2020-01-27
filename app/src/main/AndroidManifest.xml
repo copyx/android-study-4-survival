@@ -79,6 +79,7 @@
         <activity android:name=".GridViewPracticeActivity" />
         <activity android:name=".CompositeWidgetPracticeActivity" />
         <activity android:name=".MonthlyCalendarActivity" />
+        <activity android:name=".MultiTouchImageViewActivity" />
     </application>
 
 </manifest>
