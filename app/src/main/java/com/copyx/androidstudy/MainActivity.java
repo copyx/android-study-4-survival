@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
+        addButton("리스트뷰 실습", ListViewPracticeActivity.class);
         addButton("비트맵 버튼 실습", BitmapButtonActivity.class);
         addButton("나인패치 실습", NinePatchPracticeActivity.class);
 

@@ -74,6 +74,7 @@
         <activity android:name=".KeypadPracticeActivity" />
         <activity android:name=".NinePatchPracticeActivity" />
         <activity android:name=".BitmapButtonActivity" />
+        <activity android:name=".ListViewPracticeActivity" />
     </application>
 
 </manifest>
