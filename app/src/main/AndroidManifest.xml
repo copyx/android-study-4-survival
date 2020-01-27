@@ -78,6 +78,7 @@
         <activity android:name=".SpinnerPracticeActivity" />
         <activity android:name=".GridViewPracticeActivity" />
         <activity android:name=".CompositeWidgetPracticeActivity" />
+        <activity android:name=".MonthlyCalendarActivity" />
     </application>
 
 </manifest>
