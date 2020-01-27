@@ -73,6 +73,7 @@
         <activity android:name=".WebViewPracticeActivity" />
         <activity android:name=".KeypadPracticeActivity" />
         <activity android:name=".NinePatchPracticeActivity" />
+        <activity android:name=".BitmapButtonActivity" />
     </application>
 
 </manifest>
