@@ -72,6 +72,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".WebViewPracticeActivity" />
         <activity android:name=".KeypadPracticeActivity" />
+        <activity android:name=".NinePatchPracticeActivity" />
     </application>
 
 </manifest>
