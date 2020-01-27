@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
+        addButton("복합 위젯(DateTimePicker) 실습", CompositeWidgetPracticeActivity.class);
         addButton("그리드뷰 실습", GridViewPracticeActivity.class);
         addButton("스피너 실습", SpinnerPracticeActivity.class);
         addButton("리스트뷰 실습", ListViewPracticeActivity.class);
